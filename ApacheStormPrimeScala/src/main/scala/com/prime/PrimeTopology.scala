@@ -1,4 +1,4 @@
-package main.scala.com.prime
+package com.prime
 
 import org.apache.storm.{Config, LocalCluster}
 import org.apache.storm.topology.TopologyBuilder

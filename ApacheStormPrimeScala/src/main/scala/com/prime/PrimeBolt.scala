@@ -1,4 +1,4 @@
-package main.scala.com.prime
+package com.prime
 
 import org.apache.storm.task.{OutputCollector, TopologyContext}
 import org.apache.storm.topology.OutputFieldsDeclarer

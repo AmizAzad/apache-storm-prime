@@ -4,12 +4,18 @@ version := "1.0"
 
 scalaVersion := "2.11.12"
 
-// including apache storm lib jars to classpath
-val stormLibPath = "/Users/a.azad/IdeaProjects/apache-storm-prime/ApacheStormPrimeScala/external"
-Compile / unmanagedJars ++= (file(stormLibPath) ** "*.jar").classpath
+resolvers ++= Seq(
+  "artifactory-releases" at "https://artifactory.adform.com/artifactory/libs-release/",
+  "artifactory-snapshots" at "https://artifactory.adform.com/artifactory/libs-snapshot/",
+  "artifactory-release-local" at "https://artifactory.adform.com/artifactory/libs-release-local",
+  "alexandrnikitin" at "https://github.com/alexandrnikitin/bloom-filter-scala/releases"
+)
+
+val stormVersion = "2.6.2"
 
 libraryDependencies ++= Seq(
   // Add any additional dependencies here, if necessary
+  "org.apache.storm"            % "storm-core"                % stormVersion
 )
 
 ThisBuild / mainClass := Some("com.prime.PrimeTopology")

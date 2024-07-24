@@ -16,7 +16,8 @@ class PrimeBolt extends BaseRichBolt {
 
   override def execute(tuple: Tuple): Unit = {
     var number = tuple.getInteger(0)
-    if (isPrime(number)) println(number)
+    if (isPrime(number)) println("Prime Number: "+number)
+    Thread.sleep(500)
     collector.ack(tuple)
   }
 
